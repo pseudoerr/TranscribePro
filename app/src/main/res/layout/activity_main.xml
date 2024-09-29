@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/CustomScreenStyle"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/language_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/selectAudioButton"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/list_item_text_color"
+        android:visibility="gone"
+        android:padding="10dp" />
+
+
+    <Button
+        android:id="@+id/selectAudioButton"
+        style="@style/CustomButtonStyle"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Select Audio" />
+
+    <TextView
+        android:id="@+id/languageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        style="@style/CustomTextColor"/>
+
+    <ListView
+        android:id="@+id/languageListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectAudioButton"
+        android:gravity="center"
+        style="@style/CustomTextColor"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/logTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectAudioButton"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="Transcription:"
+        style="@style/CustomTextColor"
+        android:visibility="gone" />
+
+</RelativeLayout>
