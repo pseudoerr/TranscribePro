@@ -1,113 +1,64 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(whisper.cpp)
+project(whisper-android)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Download whisper.cpp if not already present
-include(FetchContent)
-FetchContent_Declare(
-    whisper
-    GIT_REPOSITORY https://github.com/ggerganov/whisper.cpp.git
-    GIT_TAG master
-)
-FetchContent_MakeAvailable(whisper)
+# Find required libraries
+find_library(LOG_LIB log)
+find_library(ANDROID_LIB android)
 
-# Now set the whisper library directory to the downloaded content
-set(WHISPER_LIB_DIR ${whisper_SOURCE_DIR})
-
-# Path to external GGML, otherwise uses the copy in whisper.cpp.
-option(GGML_HOME "whisper: Path to external GGML source" OFF)
-
-set(
-    SOURCE_FILES
-    ${WHISPER_LIB_DIR}/whisper.cpp
-    ${CMAKE_SOURCE_DIR}/jni.c
+# Define source files
+set(SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/jni.c
 )
 
-# TODO: this needs to be updated to work with the new ggml CMakeLists
+# Add definition to prevent sysinfo.h issues
+add_definitions(-DNO_SYSINFO)
 
-if (NOT GGML_HOME)
-    set(
-        SOURCE_FILES
-        ${SOURCE_FILES}
-        ${WHISPER_LIB_DIR}/ggml.c
-        ${WHISPER_LIB_DIR}/ggml-alloc.c
-        ${WHISPER_LIB_DIR}/ggml-backend.cpp
-        ${WHISPER_LIB_DIR}/ggml-backend-reg.cpp
-        ${WHISPER_LIB_DIR}/ggml-quants.c
-        ${WHISPER_LIB_DIR}/ggml-threading.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/ggml-cpu.c
-        ${WHISPER_LIB_DIR}/ggml-cpu/ggml-cpu.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/ggml-cpu-aarch64.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/ggml-cpu-hbm.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/ggml-cpu-quants.c
-        ${WHISPER_LIB_DIR}/ggml-cpu/ggml-cpu-traits.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/unary-ops.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/binary-ops.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/vec.cpp
-        ${WHISPER_LIB_DIR}/ggml-cpu/ops.cpp
-        )
+# Create the main library
+add_library(whisper_android_lib SHARED ${SOURCES})
+
+# Include directories
+target_include_directories(whisper_android_lib PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+# Link libraries
+target_link_libraries(whisper_android_lib
+    ${LOG_LIB}
+    ${ANDROID_LIB}
+)
+
+# Create ARM64 variant with FP16 support
+if(ANDROID_ABI STREQUAL "arm64-v8a")
+    add_library(whisper_v8fp16_va SHARED ${SOURCES})
+    
+    target_include_directories(whisper_v8fp16_va PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+    )
+    
+    target_compile_definitions(whisper_v8fp16_va PRIVATE GGML_USE_FP16_ARM)
+    
+    target_link_libraries(whisper_v8fp16_va
+        ${LOG_LIB}
+        ${ANDROID_LIB}
+    )
 endif()
 
-find_library(LOG_LIB log)
-
-function(build_library target_name)
-    add_library(
-        ${target_name}
-        SHARED
-        ${SOURCE_FILES}
+# Create ARMV7 variant with VFPV4 support
+if(ANDROID_ABI STREQUAL "armeabi-v7a")
+    add_library(whisper_vfpv4 SHARED ${SOURCES})
+    
+    target_include_directories(whisper_vfpv4 PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
     )
+    
+    target_compile_definitions(whisper_vfpv4 PRIVATE GGML_USE_VFPV4)
+    
+    target_link_libraries(whisper_vfpv4
+        ${LOG_LIB}
+        ${ANDROID_LIB}
+    )
+endif()
 
-    target_compile_definitions(${target_name} PUBLIC GGML_USE_CPU)
-
-    if (${target_name} STREQUAL "whisper_v8fp16_va")
-        target_compile_options(${target_name} PRIVATE -march=armv8.2-a+fp16)
-        set(GGML_COMPILE_OPTIONS                      -march=armv8.2-a+fp16)
-    elseif (${target_name} STREQUAL "whisper_vfpv4")
-        target_compile_options(${target_name} PRIVATE -mfpu=neon-vfpv4)
-        set(GGML_COMPILE_OPTIONS                      -mfpu=neon-vfpv4)
-    endif ()
-
-    if (NOT ${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-        target_compile_options(${target_name} PRIVATE -O3)
-        target_compile_options(${target_name} PRIVATE -fvisibility=hidden -fvisibility-inlines-hidden)
-        target_compile_options(${target_name} PRIVATE -ffunction-sections -fdata-sections)
-
-        target_link_options(${target_name} PRIVATE -Wl,--gc-sections)
-        target_link_options(${target_name} PRIVATE -Wl,--exclude-libs,ALL)
-        target_link_options(${target_name} PRIVATE -flto)
-    endif ()
-
-    if (GGML_HOME)
-        include(FetchContent)
-        FetchContent_Declare(ggml SOURCE_DIR ${GGML_HOME})
-        FetchContent_MakeAvailable(ggml)
-
-        target_compile_options(ggml PRIVATE ${GGML_COMPILE_OPTIONS})
-        target_link_libraries(${target_name} ${LOG_LIB} android ggml)
-    else()
-        target_link_libraries(${target_name} ${LOG_LIB} android)
-    endif()
-
-
-endfunction()
-
-if (${ANDROID_ABI} STREQUAL "arm64-v8a")
-    build_library("whisper_v8fp16_va")
-elseif (${ANDROID_ABI} STREQUAL "armeabi-v7a")
-    build_library("whisper_vfpv4")
-endif ()
-
-build_library("whisper") # Default target
-
-include_directories(${WHISPER_LIB_DIR})
-include_directories(${CMAKE_SOURCE_DIR})
-
-# Include Android NDK headers
-include_directories(${ANDROID_NDK}/sources/android/native_app_glue)
-include_directories(${ANDROID_NDK}/toolchains/llvm/prebuilt/${ANDROID_HOST_TAG}/sysroot/usr/include)
-include_directories(${ANDROID_NDK}/toolchains/llvm/prebuilt/${ANDROID_HOST_TAG}/sysroot/usr/include/${ANDROID_TOOLCHAIN_NAME})
-
-# Add define to prevent sysinfo.h issue
-add_definitions(-DNO_SYSINFO)

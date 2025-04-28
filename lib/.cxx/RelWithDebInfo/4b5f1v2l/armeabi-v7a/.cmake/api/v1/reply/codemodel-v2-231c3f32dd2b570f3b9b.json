@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "whisper-android",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "whisper_android_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-whisper_android_lib-RelWithDebInfo-48a78cb3899c37cdbd7a.json",
+					"name" : "whisper_android_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "whisper_vfpv4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-whisper_vfpv4-RelWithDebInfo-a097f2c9a971ae9628a7.json",
+					"name" : "whisper_vfpv4",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/mac/TranscribePro/lib/.cxx/RelWithDebInfo/4b5f1v2l/armeabi-v7a",
+		"source" : "/Users/mac/TranscribePro/lib/src/main/jni/whisper"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

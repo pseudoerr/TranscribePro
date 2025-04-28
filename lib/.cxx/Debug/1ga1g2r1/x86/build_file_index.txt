@@ -1,0 +1,1 @@
+/Users/mac/TranscribePro/lib/src/main/jni/whisper/CMakeLists.txt

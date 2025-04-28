@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="incidents">
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.core.ktx`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-core-ktx`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.core.ktx">
+            <range
+                file="${:lib*projectDir}/build.gradle.kts"
+                startOffset="1135"
+                endOffset="1166"/>
+        </fix-replace>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="52"
+            column="21"
+            startOffset="1136"
+            endLine="52"
+            endColumn="50"
+            endOffset="1165"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-appcompat-appcompat2"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-appcompat-appcompat2 = &quot;1.6.1&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-appcompat-appcompat2 = &quot;1.6.1&quot;&#xA;">
+                <range
+                    file="$HOME/TranscribePro/gradle/libs.versions.toml"
+                    startOffset="25"
+                    endOffset="25"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-appcompat-appcompat2 = { module = &quot;androidx.appcompat:appcompat&quot;, version.ref = &quot;androidx-appcompat-appcompat2&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-appcompat-appcompat2 = { module = &quot;androidx.appcompat:appcompat&quot;, version.ref = &quot;androidx-appcompat-appcompat2&quot; }&#xA;">
+                <range
+                    file="$HOME/TranscribePro/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.appcompat.appcompat2"
+                robot="true"
+                replacement="libs.androidx.appcompat.appcompat2">
+                <range
+                    file="${:lib*projectDir}/build.gradle.kts"
+                    startOffset="1187"
+                    endOffset="1223"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="53"
+            column="21"
+            startOffset="1188"
+            endLine="53"
+            endColumn="55"
+            endOffset="1222"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for org-jetbrains-kotlinx-kotlinx-coroutines-android2"
+            robot="true">
+            <fix-replace
+                description="Replace with org-jetbrains-kotlinx-kotlinx-coroutines-android2 = &quot;1.7.3&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="org-jetbrains-kotlinx-kotlinx-coroutines-android2 = &quot;1.7.3&quot;&#xA;">
+                <range
+                    file="$HOME/TranscribePro/gradle/libs.versions.toml"
+                    startOffset="223"
+                    endOffset="223"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with org-jetbrains-kotlinx-kotlinx-coroutines-android2 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinx-coroutines-android2&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="org-jetbrains-kotlinx-kotlinx-coroutines-android2 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinx-coroutines-android2&quot; }&#xA;">
+                <range
+                    file="$HOME/TranscribePro/gradle/libs.versions.toml"
+                    startOffset="1548"
+                    endOffset="1548"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.org.jetbrains.kotlinx.kotlinx.coroutines.android2"
+                robot="true"
+                replacement="libs.org.jetbrains.kotlinx.kotlinx.coroutines.android2">
+                <range
+                    file="${:lib*projectDir}/build.gradle.kts"
+                    startOffset="1244"
+                    endOffset="1300"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="54"
+            column="21"
+            startOffset="1245"
+            endLine="54"
+            endColumn="75"
+            endOffset="1299"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.junit`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `junit`"
+            robot="true"
+            independent="true"
+            replacement="libs.junit">
+            <range
+                file="${:lib*projectDir}/build.gradle.kts"
+                startOffset="1325"
+                endOffset="1345"/>
+        </fix-replace>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="55"
+            column="25"
+            startOffset="1326"
+            endLine="55"
+            endColumn="43"
+            endOffset="1344"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.junit`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-junit`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.junit">
+            <range
+                file="${:lib*projectDir}/build.gradle.kts"
+                startOffset="1377"
+                endOffset="1408"/>
+        </fix-replace>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="56"
+            column="32"
+            startOffset="1378"
+            endLine="56"
+            endColumn="61"
+            endOffset="1407"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.espresso.core`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-espresso-core`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.espresso.core">
+            <range
+                file="${:lib*projectDir}/build.gradle.kts"
+                startOffset="1440"
+                endOffset="1484"/>
+        </fix-replace>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="57"
+            column="32"
+            startOffset="1441"
+            endLine="57"
+            endColumn="74"
+            endOffset="1483"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"/>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="52"
+            column="21"
+            startOffset="1136"
+            endLine="52"
+            endColumn="50"
+            endOffset="1165"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0">
+        <fix-replace
+            description="Change to 1.7.0"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.0"/>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="53"
+            column="21"
+            startOffset="1188"
+            endLine="53"
+            endColumn="55"
+            endOffset="1222"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.2.1"/>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="56"
+            column="32"
+            startOffset="1378"
+            endLine="56"
+            endColumn="61"
+            endOffset="1407"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1">
+        <fix-replace
+            description="Change to 3.6.1"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.6.1"/>
+        <location
+            file="${:lib*projectDir}/build.gradle.kts"
+            line="57"
+            column="32"
+            startOffset="1441"
+            endLine="57"
+            endColumn="74"
+            endOffset="1483"/>
+    </incident>
+
+</incidents>

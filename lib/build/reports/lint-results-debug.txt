@@ -1,0 +1,46 @@
+/Users/mac/TranscribePro/lib/build.gradle.kts:52: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.12.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:53: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0 [GradleDependency]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:56: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:57: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/mac/TranscribePro/lib/build.gradle.kts:52: Warning: Use the existing version catalog reference (libs.androidx.core.ktx) instead [UseTomlInstead]
+    implementation("androidx.core:core-ktx:1.12.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:53: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:54: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:55: Warning: Use the existing version catalog reference (libs.junit) instead [UseTomlInstead]
+    testImplementation("junit:junit:4.13.2")
+                        ~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:56: Warning: Use the existing version catalog reference (libs.androidx.junit) instead [UseTomlInstead]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/TranscribePro/lib/build.gradle.kts:57: Warning: Use the existing version catalog reference (libs.androidx.espresso.core) instead [UseTomlInstead]
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseTomlInstead":
+   If your project is using a libs.versions.toml file, you should place all
+   Gradle dependencies in the TOML file. This lint check looks for version
+   declarations outside of the TOML file and suggests moving them (and in the
+   IDE, provides a quickfix to performing the operation automatically).
+
+0 errors, 10 warnings

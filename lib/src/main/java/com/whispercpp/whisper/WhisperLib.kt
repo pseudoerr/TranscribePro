@@ -124,8 +124,8 @@ private class WhisperLib {
                 Log.d(LOG_TAG, "Loading libwhisper_v8fp16_va.so")
                 System.loadLibrary("whisper_v8fp16_va")
             } else {
-                Log.d(LOG_TAG, "Loading libwhisper.so")
-                System.loadLibrary("whisper")
+                Log.d(LOG_TAG, "Loading libwhisper_android_lib.so")
+                System.loadLibrary("whisper_android_lib")
             }
         }
 

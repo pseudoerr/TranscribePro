@@ -1,0 +1,4 @@
+/Users/mac/TranscribePro/lib/.cxx/RelWithDebInfo/4b5f1v2l/armeabi-v7a/CMakeFiles/whisper_android_lib.dir
+/Users/mac/TranscribePro/lib/.cxx/RelWithDebInfo/4b5f1v2l/armeabi-v7a/CMakeFiles/whisper_vfpv4.dir
+/Users/mac/TranscribePro/lib/.cxx/RelWithDebInfo/4b5f1v2l/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/mac/TranscribePro/lib/.cxx/RelWithDebInfo/4b5f1v2l/armeabi-v7a/CMakeFiles/rebuild_cache.dir

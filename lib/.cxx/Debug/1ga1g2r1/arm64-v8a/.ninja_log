@@ -1,0 +1,13 @@
+# ninja log v5
+0	28	0	clean	236afe6167867679
+1	117	1745868600854270415	build.ninja	86ec4c3a0f15d5f9
+0	367	1745867177113812913	CMakeFiles/whisper_android_lib.dir/jni.c.o	ab65673d282e5c76
+0	162	1745868601139227641	CMakeFiles/whisper_android_lib.dir/jni.c.o	ab65673d282e5c76
+1	165	1745868601139227841	CMakeFiles/whisper_v8fp16_va.dir/jni.c.o	79687f85e769faf8
+165	349	1745868601323821875	/Users/mac/TranscribePro/lib/build/intermediates/cxx/Debug/1ga1g2r1/obj/arm64-v8a/libwhisper_v8fp16_va.so	d50ee6b4cfa16e5f
+162	351	1745868601326601753	/Users/mac/TranscribePro/lib/build/intermediates/cxx/Debug/1ga1g2r1/obj/arm64-v8a/libwhisper_android_lib.so	2695fcb72bece5d7
+0	23	0	clean	236afe6167867679
+0	720	1745869309518602701	CMakeFiles/whisper_android_lib.dir/jni.c.o	ab65673d282e5c76
+2	722	1745869309518482197	CMakeFiles/whisper_v8fp16_va.dir/jni.c.o	79687f85e769faf8
+721	1113	1745869309910120982	/Users/mac/TranscribePro/lib/build/intermediates/cxx/Debug/1ga1g2r1/obj/arm64-v8a/libwhisper_android_lib.so	2695fcb72bece5d7
+723	1114	1745869309910114463	/Users/mac/TranscribePro/lib/build/intermediates/cxx/Debug/1ga1g2r1/obj/arm64-v8a/libwhisper_v8fp16_va.so	d50ee6b4cfa16e5f

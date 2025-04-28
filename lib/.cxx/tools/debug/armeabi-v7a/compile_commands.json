@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/mac/TranscribePro/lib/.cxx/Debug/1ga1g2r1/armeabi-v7a",
+  "command": "/Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=armv7-none-linux-androideabi24 --sysroot=/Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DNO_SYSINFO -Dwhisper_android_lib_EXPORTS -I/Users/mac/TranscribePro/lib/src/main/jni/whisper -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -o CMakeFiles/whisper_android_lib.dir/jni.c.o -c /Users/mac/TranscribePro/lib/src/main/jni/whisper/jni.c",
+  "file": "/Users/mac/TranscribePro/lib/src/main/jni/whisper/jni.c"
+},
+{
+  "directory": "/Users/mac/TranscribePro/lib/.cxx/Debug/1ga1g2r1/armeabi-v7a",
+  "command": "/Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=armv7-none-linux-androideabi24 --sysroot=/Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DGGML_USE_VFPV4 -DNO_SYSINFO -Dwhisper_vfpv4_EXPORTS -I/Users/mac/TranscribePro/lib/src/main/jni/whisper -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -o CMakeFiles/whisper_vfpv4.dir/jni.c.o -c /Users/mac/TranscribePro/lib/src/main/jni/whisper/jni.c",
+  "file": "/Users/mac/TranscribePro/lib/src/main/jni/whisper/jni.c"
+}
+]

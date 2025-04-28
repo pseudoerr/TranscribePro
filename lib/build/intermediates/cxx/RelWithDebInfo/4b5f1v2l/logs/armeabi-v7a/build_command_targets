@@ -1,0 +1,5 @@
+/Users/mac/Library/Android/sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/mac/TranscribePro/lib/.cxx/RelWithDebInfo/4b5f1v2l/armeabi-v7a \
+  whisper_android_lib \
+  whisper_vfpv4

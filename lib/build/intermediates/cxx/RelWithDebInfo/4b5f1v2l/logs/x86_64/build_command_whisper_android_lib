@@ -1,0 +1,4 @@
+/Users/mac/Library/Android/sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/mac/TranscribePro/lib/.cxx/RelWithDebInfo/4b5f1v2l/x86_64 \
+  whisper_android_lib

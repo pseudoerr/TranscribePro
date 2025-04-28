@@ -1,0 +1,6 @@
+# ninja log v5
+0	150	1745868613583365221	CMakeFiles/whisper_android_lib.dir/jni.c.o	c8aa8ccfc083320d
+151	299	1745868613731198365	/Users/mac/TranscribePro/lib/build/intermediates/cxx/RelWithDebInfo/4b5f1v2l/obj/x86_64/libwhisper_android_lib.so	5b29272c855c19bd
+0	23	0	clean	236afe6167867679
+0	199	1745869313038124742	CMakeFiles/whisper_android_lib.dir/jni.c.o	c8aa8ccfc083320d
+206	567	1745869313430704494	/Users/mac/TranscribePro/lib/build/intermediates/cxx/RelWithDebInfo/4b5f1v2l/obj/x86_64/libwhisper_android_lib.so	5b29272c855c19bd

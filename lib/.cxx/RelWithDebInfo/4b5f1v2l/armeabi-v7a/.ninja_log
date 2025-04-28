@@ -1,0 +1,10 @@
+# ninja log v5
+0	167	1745868610627425290	CMakeFiles/whisper_android_lib.dir/jni.c.o	ae547257efa345b9
+2	168	1745868610627197914	CMakeFiles/whisper_vfpv4.dir/jni.c.o	e33ecff64d69f15a
+168	332	1745868610789654562	/Users/mac/TranscribePro/lib/build/intermediates/cxx/RelWithDebInfo/4b5f1v2l/obj/armeabi-v7a/libwhisper_android_lib.so	489e09fa3498d733
+168	333	1745868610789819923	/Users/mac/TranscribePro/lib/build/intermediates/cxx/RelWithDebInfo/4b5f1v2l/obj/armeabi-v7a/libwhisper_vfpv4.so	baef63cb5cf9c0bd
+0	30	0	clean	236afe6167867679
+1	157	1745869312142647853	CMakeFiles/whisper_android_lib.dir/jni.c.o	ae547257efa345b9
+3	159	1745869312141897260	CMakeFiles/whisper_vfpv4.dir/jni.c.o	e33ecff64d69f15a
+157	317	1745869312300711335	/Users/mac/TranscribePro/lib/build/intermediates/cxx/RelWithDebInfo/4b5f1v2l/obj/armeabi-v7a/libwhisper_android_lib.so	489e09fa3498d733
+160	317	1745869312300858971	/Users/mac/TranscribePro/lib/build/intermediates/cxx/RelWithDebInfo/4b5f1v2l/obj/armeabi-v7a/libwhisper_vfpv4.so	baef63cb5cf9c0bd

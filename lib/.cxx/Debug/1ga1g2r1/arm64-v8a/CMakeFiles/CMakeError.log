@@ -1,0 +1,51 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /Users/mac/TranscribePro/lib/.cxx/Debug/1ga1g2r1/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/mac/Library/Android/sdk/cmake/3.22.1/bin/ninja cmTC_c3da3 && [1/2] Building C object CMakeFiles/cmTC_c3da3.dir/src.c.o
+/Users/mac/TranscribePro/lib/.cxx/Debug/1ga1g2r1/arm64-v8a/CMakeFiles/CMakeTmp/src.c:13:3: warning: implicit declaration of function 'pthread_cancel' is invalid in C99 [-Wimplicit-function-declaration]
+  pthread_cancel(thread);
+  ^
+1 warning generated.
+[2/2] Linking C executable cmTC_c3da3
+FAILED: cmTC_c3da3 
+: && /Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android24 --sysroot=/Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments -Wl,--gc-sections CMakeFiles/cmTC_c3da3.dir/src.c.o -o cmTC_c3da3  -latomic -lm && :
+ld: error: undefined symbol: pthread_cancel
+>>> referenced by src.c:13
+>>>               CMakeFiles/cmTC_c3da3.dir/src.c.o:(main)
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E failed with the following output:
+Change Dir: /Users/mac/TranscribePro/lib/.cxx/Debug/1ga1g2r1/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/mac/Library/Android/sdk/cmake/3.22.1/bin/ninja cmTC_7c28b && [1/2] Building CXX object CMakeFiles/cmTC_7c28b.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_7c28b.dir/src.cxx.o 
+/Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android24 --sysroot=/Users/mac/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DGGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fPIE   -mfp16-format=ieee -std=gnu++17 -MD -MT CMakeFiles/cmTC_7c28b.dir/src.cxx.o -MF CMakeFiles/cmTC_7c28b.dir/src.cxx.o.d -o CMakeFiles/cmTC_7c28b.dir/src.cxx.o -c /Users/mac/TranscribePro/lib/.cxx/Debug/1ga1g2r1/arm64-v8a/CMakeFiles/CMakeTmp/src.cxx
+clang++: error: unknown argument: '-mfp16-format=ieee'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main() { return 0; }
