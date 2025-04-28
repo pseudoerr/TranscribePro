@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TranscribePro"
 include(":app")
+include(":lib")
