@@ -91,7 +91,7 @@ class AudioFileManager(private val context: Context) {
     }
     
     // Save a transcription with its associated audio file
-    suspend fun saveTranscription(audioFile: File, text: String) = withContext(Dispatchers.IO) {
+    suspend fun saveTranscription(audioFile: File, text: String): File = withContext(Dispatchers.IO) {
         val baseName = audioFile.nameWithoutExtension
         val transcriptionFile = File(audioFile.parentFile, "$baseName.txt")
         transcriptionFile.writeText(text)
@@ -102,6 +102,8 @@ class AudioFileManager(private val context: Context) {
         metadata.transcriptionPath = transcriptionFile.absolutePath
         metadata.lastAccessed = System.currentTimeMillis()
         metadataMap[audioFile.absolutePath] = metadata
+        
+        return@withContext transcriptionFile
     }
     
     // Clean up old files
